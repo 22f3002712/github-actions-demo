@@ -1,0 +1,22 @@
+name: CI
+
+# When to run the workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# What jobs to perform
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a simple test command
+      - name: Run test command
+        run: echo "✅ CI pipeline working successfully!"
